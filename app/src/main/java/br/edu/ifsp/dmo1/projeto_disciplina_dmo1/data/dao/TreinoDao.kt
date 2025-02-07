@@ -10,14 +10,14 @@ import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Treino
 interface TreinoDao {
 
     @Insert
-    suspend fun insert(treino: Treino)
+    suspend fun insert(treino: Treino): Long
 
     @Query("SELECT * FROM treinos")
-    suspend fun getAllTreinos(): LiveData<List<Treino>>
+    suspend fun getAllTreinos(): List<Treino>
 
     @Query("SELECT * FROM treinos WHERE professor_email = :professorEmail")
-    suspend fun getTreinosByProfessorEmail(professorEmail: String): LiveData<List<Treino>>
+    suspend fun getTreinosByProfessorEmail(professorEmail: String): List<Treino>
 
     @Query("SELECT * FROM treinos WHERE modalidade_id = :modalidadeId")
-    suspend fun getTreinosByModalidadeId(modalidadeId: Int): LiveData<List<Treino>>
+    suspend fun getTreinosByModalidadeId(modalidadeId: Int): List<Treino>
 }

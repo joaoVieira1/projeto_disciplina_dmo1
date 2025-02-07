@@ -11,8 +11,8 @@ class UsuarioRepository(private val usuarioDao: UsuarioDao) {
 //        return usuarioDao.getAllUsuarios()
 //    }
 
-    suspend fun insert(usuario: Usuario) {
-        usuarioDao.insert(usuario)
+    suspend fun insert(usuario: Usuario): Boolean {
+        return usuarioDao.insert(usuario) > 0
     }
 
     suspend fun getUsuarioByEmail(email: String): Usuario? {

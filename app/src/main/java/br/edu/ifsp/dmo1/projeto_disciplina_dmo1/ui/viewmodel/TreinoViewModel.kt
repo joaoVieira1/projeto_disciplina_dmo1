@@ -11,11 +11,11 @@ class TreinoViewModel (private val repository: TreinoRepository) : ViewModel() {
         repository.insert(treino)
     }
 
-    suspend fun getTreinosByProfessorEmail(professorEmail: String): LiveData<List<Treino>> {
+    suspend fun getTreinosByProfessorEmail(professorEmail: String): List<Treino> {
         return repository.getTreinosByProfessorEmail(professorEmail)
     }
 
-    suspend fun getTreinosByModalidadeId(modalidadeId: Int): LiveData<List<Treino>> {
+    suspend fun getTreinosByModalidadeId(modalidadeId: Int): List<Treino> {
         return repository.getTreinosByModalidadeId(modalidadeId)
     }
 }

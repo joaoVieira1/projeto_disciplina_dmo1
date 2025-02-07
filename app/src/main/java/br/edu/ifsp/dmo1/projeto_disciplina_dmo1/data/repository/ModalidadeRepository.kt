@@ -8,11 +8,11 @@ class ModalidadeRepository(private val modalidadeDao: ModalidadeDao) {
 
 //    val allModalidades: LiveData<List<Modalidade>> = modalidadeDao.getAllModalidades()
 
-    suspend fun insert(modalidade: Modalidade) {
-        modalidadeDao.insert(modalidade)
+    suspend fun insert(modalidade: Modalidade): Boolean {
+       return modalidadeDao.insert(modalidade) > 0
     }
 
-    suspend fun getModalidadeById(id: Int): LiveData<Modalidade> {
+    suspend fun getModalidadeById(id: Int): Modalidade {
         return modalidadeDao.getModalidadeById(id)
     }
 }

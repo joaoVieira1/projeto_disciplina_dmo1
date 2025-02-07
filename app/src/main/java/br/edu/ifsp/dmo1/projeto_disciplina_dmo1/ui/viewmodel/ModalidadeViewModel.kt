@@ -15,7 +15,7 @@ class ModalidadeViewModel(private val repository: ModalidadeRepository) : ViewMo
         repository.insert(modalidade)
     }
 
-    suspend fun getModalidadeById(id: Int): LiveData<Modalidade> {
+    suspend fun getModalidadeById(id: Int): Modalidade {
         return repository.getModalidadeById(id)
     }
 }

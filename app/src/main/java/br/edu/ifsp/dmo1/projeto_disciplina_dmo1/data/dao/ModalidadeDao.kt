@@ -10,11 +10,11 @@ import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Modalidade
 interface ModalidadeDao {
 
     @Insert
-    suspend fun insert(modalidade: Modalidade)
+    suspend fun insert(modalidade: Modalidade): Long
 
     @Query("SELECT * FROM modalidades")
-    suspend fun getAllModalidades(): LiveData<List<Modalidade>>
+    suspend fun getAllModalidades(): List<Modalidade>
 
     @Query("SELECT * FROM modalidades WHERE id = :id")
-    suspend fun getModalidadeById(id: Int): LiveData<Modalidade>
+    suspend fun getModalidadeById(id: Int): Modalidade
 }
