@@ -19,10 +19,6 @@ import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Usuario
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun usuarioDao(): UsuarioDao
-    abstract fun modalidadeDao(): ModalidadeDao
-    abstract fun treinoDao(): TreinoDao
-
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
@@ -40,4 +36,9 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
     }
+
+    abstract fun usuarioDao(): UsuarioDao
+    abstract fun modalidadeDao(): ModalidadeDao
+    abstract fun treinoDao(): TreinoDao
+
 }

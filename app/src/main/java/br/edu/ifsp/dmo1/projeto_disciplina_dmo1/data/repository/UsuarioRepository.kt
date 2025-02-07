@@ -1,21 +1,23 @@
 package br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.repository
 
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.UsuarioDao
+import android.content.Context
+import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.database.AppDatabase
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Usuario
 
-class UsuarioRepository(private val usuarioDao: UsuarioDao) {
+class UsuarioRepository(context: Context) {
 
+    private val database = AppDatabase.getDatabase(context)
+    private val dao = database.usuarioDao()
 
-
-//    suspend fun getAll(usuario: Usuario) : LiveData<List<Usuario>>{
-//        return usuarioDao.getAllUsuarios()
-//    }
+    suspend fun getAll(usuario: Usuario) : List<Usuario>{
+      return dao.getAllUsuarios()
+    }
 
     suspend fun insert(usuario: Usuario): Boolean {
-        return usuarioDao.insert(usuario) > 0
+        return dao.insert(usuario) > 0
     }
 
     suspend fun getUsuarioByEmail(email: String): Usuario? {
-        return usuarioDao.getUsuarioByEmail(email)
+        return dao.getUsuarioByEmail(email)
     }
 }

@@ -1,18 +1,24 @@
 package br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.repository
 
-import androidx.lifecycle.LiveData
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.ModalidadeDao
+import android.content.Context
+
+import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.database.AppDatabase
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Modalidade
 
-class ModalidadeRepository(private val modalidadeDao: ModalidadeDao) {
+class ModalidadeRepository(context: Context) {
 
-//    val allModalidades: LiveData<List<Modalidade>> = modalidadeDao.getAllModalidades()
+    private val database = AppDatabase.getDatabase(context)
+    private val dao = database.modalidadeDao()
+
+    suspend fun getAll(): List<Modalidade>{
+        return dao.getAllModalidades()
+    }
 
     suspend fun insert(modalidade: Modalidade): Boolean {
-       return modalidadeDao.insert(modalidade) > 0
+       return dao.insert(modalidade) > 0
     }
 
     suspend fun getModalidadeById(id: Int): Modalidade {
-        return modalidadeDao.getModalidadeById(id)
+        return dao.getModalidadeById(id)
     }
 }

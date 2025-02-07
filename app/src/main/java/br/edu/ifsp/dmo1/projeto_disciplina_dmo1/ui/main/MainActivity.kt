@@ -4,61 +4,62 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.ui.aluno.AlunoActivity
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.ui.cadastrar.CadastrarActivity
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.ui.professor.ProfessorActivity
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.ui.viewmodel.UsuarioViewModel
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.utils.MyApplication
+
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        binding.loginButton.setOnClickListener {
-            val email = binding.emailEditText.text.toString()
-            val senha = binding.senhaEditText.text.toString()
+        configListeners()
+    }
 
+    private fun configListeners(){
+        binding.cadastrarButton.setOnClickListener {
+            val intent = Intent(this, CadastrarActivity::class.java)
+            startActivity(intent)
+        }
 
-            if (email.isNotEmpty() && senha.isNotEmpty()) {
-                val viewModel = UsuarioViewModel((application as MyApplication).usuarioRepository)
+        binding.loginButton.setOnClickListener{ logar() }
+    }
 
+    private fun logar(){
+        val email = binding.emailEditText.text.toString()
+        val senha = binding.senhaEditText.text.toString()
 
+        if (email.isNotEmpty() && senha.isNotEmpty()) {
+            viewModel.getUsuarioByEmail(email) { usuario ->
+                if (usuario != null && usuario.senha == senha && usuario.email == email) {
+                    Toast.makeText(this, "Login efetuado com sucesso!", Toast.LENGTH_SHORT)
+                        .show()
 
-                viewModel.getUsuarioByEmail(email) { usuario ->
-                    if (usuario != null && usuario.senha == senha) {
-                        Toast.makeText(this, "Login efetuado com sucesso!", Toast.LENGTH_SHORT)
-                            .show()
-
-                        if (usuario.tipoUsuario.equals("PROFESSOR")){
-                            val intent = Intent(this, ProfessorActivity::class.java)
-                            startActivity(intent)
-                        }else{
-                            val intent = Intent(this, AlunoActivity::class.java)
-                            startActivity(intent)
-                        }
-                    } else {
-                        Toast.makeText(this, "Usuario nao cadastrado!", Toast.LENGTH_SHORT).show()
+                    if (usuario.tipoUsuario.equals("PROFESSOR")){
+                        val intent = Intent(this, ProfessorActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        val intent = Intent(this, AlunoActivity::class.java)
+                        startActivity(intent)
                     }
-
-
+                } else {
+                    Toast.makeText(this, "Email ou senha invalidos!", Toast.LENGTH_SHORT).show()
                 }
             }
-
-
-            binding.cadastrarButton.setOnClickListener {
-                val intent = Intent(this, CadastrarActivity::class.java)
-                startActivity(intent)
-            }
+        }else{
+            Toast.makeText(this, "Informe os campos solicitados!", Toast.LENGTH_SHORT).show()
         }
     }
+
 }

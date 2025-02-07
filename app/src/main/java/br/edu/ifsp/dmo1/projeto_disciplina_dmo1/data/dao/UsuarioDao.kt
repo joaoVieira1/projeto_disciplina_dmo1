@@ -1,6 +1,5 @@
 package br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query

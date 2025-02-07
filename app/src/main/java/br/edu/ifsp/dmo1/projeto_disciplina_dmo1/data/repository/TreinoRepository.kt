@@ -1,22 +1,28 @@
 package br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.repository
 
-import androidx.lifecycle.LiveData
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.TreinoDao
+import android.content.Context
+import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.database.AppDatabase
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Treino
 
-class TreinoRepository(private val treinoDao: TreinoDao) {
+class TreinoRepository(context: Context) {
 
-//    val allTreinos: LiveData<List<Treino>> = treinoDao.getAllTreinos()
+    private val database = AppDatabase.getDatabase(context)
+    private val dao = database.treinoDao()
+
+    suspend fun getAll(): List<Treino>{
+        return dao.getAllTreinos()
+    }
 
     suspend fun insert(treino: Treino): Boolean {
-        return treinoDao.insert(treino) > 0
+        return dao.insert(treino) > 0
     }
 
     suspend fun getTreinosByProfessorEmail(professorEmail: String): List<Treino> {
-        return treinoDao.getTreinosByProfessorEmail(professorEmail)
+        return dao.getTreinosByProfessorEmail(professorEmail)
     }
 
     suspend fun getTreinosByModalidadeId(modalidadeId: Int): List<Treino> {
-        return treinoDao.getTreinosByModalidadeId(modalidadeId)
+        return dao.getTreinosByModalidadeId(modalidadeId)
     }
+
 }
