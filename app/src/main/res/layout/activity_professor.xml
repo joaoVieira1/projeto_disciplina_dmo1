@@ -4,29 +4,26 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/emailEditText"
+    <Spinner
+        android:id="@+id/modalidadeSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/e_mail" />
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/senhaEditText"
+        android:id="@+id/dietaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/senha"
-        android:inputType="textPassword" />
+        android:hint="@string/detalhe_a_rotina_de_alimenta_o" />
+
+    <EditText
+        android:id="@+id/treinoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/detalhe_a_rotina_de_atividades_f_sicas" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/salvarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/entrar" />
-
-    <Button
-        android:id="@+id/cadastrarButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cadastrar"
-        android:layout_marginTop="16dp" />
+        android:text="@string/salvar_treino" />
 </LinearLayout>

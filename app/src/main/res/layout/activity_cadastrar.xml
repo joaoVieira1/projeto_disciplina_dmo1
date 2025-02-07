@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -5,28 +6,30 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/e_mail" />
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/senhaEditText"
+        android:id="@+id/editTextSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/senha"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/loginButton"
+    <Spinner
+        android:id="@+id/spinnerTipoUsuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entrar" />
+        android:layout_height="wrap_content" />
+
 
     <Button
-        android:id="@+id/cadastrarButton"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cadastrar"
         android:layout_marginTop="16dp" />
+
 </LinearLayout>
