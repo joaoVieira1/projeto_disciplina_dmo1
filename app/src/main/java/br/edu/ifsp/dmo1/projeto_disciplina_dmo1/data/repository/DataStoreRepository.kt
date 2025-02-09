@@ -46,4 +46,10 @@ class DataStoreRepository(context: Context) {
         Pair(email, senha)
     }
 
+    fun getUserName(): Flow<String?> {
+        return dataStore.data.map { preferences ->
+            preferences[PreferencesChaves.EMAIL] ?: "Nome não encontrado"
+        }
+    }
+
 }

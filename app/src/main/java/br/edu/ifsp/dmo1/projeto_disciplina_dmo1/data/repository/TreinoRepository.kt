@@ -17,12 +17,8 @@ class TreinoRepository(context: Context) {
         return dao.insert(treino) > 0
     }
 
-    suspend fun getTreinosByProfessorEmail(professorEmail: String): List<Treino> {
-        return dao.getTreinosByProfessorEmail(professorEmail)
-    }
-
-    suspend fun getTreinosByModalidadeId(modalidadeId: Int): List<Treino> {
-        return dao.getTreinosByModalidadeId(modalidadeId)
+    suspend fun getTreinosByModalidadeId(modalidade: String): List<Treino> {
+        return dao.getTreinosByModalidadeId(modalidade)
     }
 
 }

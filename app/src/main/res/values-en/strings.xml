@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">discipline_project_dmo1</string>
+    <string name="detalhe_a_rotina_de_alimenta_o">Detail the eating routine</string>
+    <string name="detalhe_a_rotina_de_atividades_f_sicas">Detail the physical activity routine</string>
+    <string name="salvar_treino">Save training</string>
+    <string name="e_mail">Email</string>
+    <string name="senha">Password</string>
+    <string name="entrar">Login</string>
+    <string name="cadastrar">Register</string>
+    <string name="salvar_dados_de_login">Save login data</string>
+    <string name="manter_logado">Keep me logged in</string>
+    <string name="login">Login</string>
+    <string name="cadastro">Registration</string>
+    <string name="selecione_modalidade">Select the modality</string>
+    <string name="icone_spinner">Spinner icon</string>
+    <string name="logout">Logout</string>
+    <string name="filtrar_treinos">Filter Workouts</string>
+    <string name="lista_exercicios">Exercise List</string>
+    <string name="filtro">Filter</string>
+    <string name="tipo_de_usuario">User type</string>
+</resources>

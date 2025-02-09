@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     private fun setupObservers(){
+
         viewModel.checkboxPreferences.observe(this, Observer {
             val (salvarDados, manterLogado) = it
 
@@ -79,10 +81,13 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Login efetuado com sucesso!", Toast.LENGTH_SHORT)
                         .show()
 
+
+
                     viewModel.prefereces(email, senha, salvarDados, manterLogado)
 
                     if (usuario.tipoUsuario.equals("PROFESSOR")){
                         val intent = Intent(this, ProfessorActivity::class.java)
+                        intent.putExtra("email", email)
                         startActivity(intent)
                     }else{
                         val intent = Intent(this, AlunoActivity::class.java)

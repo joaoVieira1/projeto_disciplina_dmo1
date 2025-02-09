@@ -7,4 +7,15 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="salvar_dados_de_login">Salvar dados de login</string>
+    <string name="manter_logado">Manter logado</string>
+    <string name="login">Login</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="selecione_modalidade">Selecione a modalidade</string>
+    <string name="icone_spinner">Ícone do Spinner</string>
+    <string name="logout">Logout</string>
+    <string name="filtrar_treinos">Filtrar Treinos</string>
+    <string name="lista_exercicios">Lista Exercicios</string>
+    <string name="filtro">Filtro</string>
+    <string name="tipo_de_usuario">tipo de usuario</string>
 </resources>

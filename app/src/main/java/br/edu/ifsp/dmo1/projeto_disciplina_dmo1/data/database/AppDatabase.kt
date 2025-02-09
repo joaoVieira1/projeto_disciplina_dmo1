@@ -4,17 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.ModalidadeDao
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.TreinoDao
 
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.dao.UsuarioDao
-import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Modalidade
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Treino
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Usuario
 
 @Database(
-    entities = [Usuario::class, Modalidade::class, Treino::class],
-    version = 1,
+    entities = [Usuario::class,Treino::class],
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -38,7 +36,6 @@ abstract class AppDatabase : RoomDatabase() {
     }
 
     abstract fun usuarioDao(): UsuarioDao
-    abstract fun modalidadeDao(): ModalidadeDao
     abstract fun treinoDao(): TreinoDao
 
 }

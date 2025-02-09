@@ -3,7 +3,6 @@ package br.edu.ifsp.dmo1.projeto_disciplina_dmo1.ui.main
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import br.edu.ifsp.dmo1.projeto_disciplina_dmo1.data.model.Usuario
@@ -18,6 +17,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     val checkboxPreferences: LiveData<Pair<Boolean, Boolean>> = datastore.checkboxPreferences.asLiveData()
     val dadosPreferences: LiveData<Pair<String, String>> = datastore.dadosPreferences.asLiveData()
+
 
     fun getUsuarioByEmail(email: String, onResult: (Usuario?) -> Unit) = viewModelScope.launch {
         val usuario = repository.getUsuarioByEmail(email)
