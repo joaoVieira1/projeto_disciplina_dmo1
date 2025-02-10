@@ -55,5 +55,14 @@ e nosso aplicativo visa ser um facilitador nesse processo.
 ## Imagens do APP
 
 ![Imagem 1](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/1.jpeg)
+![Imagem 2](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/2.jpeg)
+![Imagem 3](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/3.jpeg)
+![Imagem 4](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/4.jpeg)
+![Imagem 5](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/5.jpeg)
+![Imagem 6](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/6.jpeg)
+![Imagem 7](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/7.jpeg)
+![Imagem 8](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/8.jpeg)
+![Imagem 9](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/9.jpeg)
+
 
 
