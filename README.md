@@ -24,7 +24,6 @@ A ideia para a criação do Agenda Fit nasceu do amor ao esporte e da vontade de
 
 - Logout: Um botão de logout permite encerrar a sessão do usuário.
 
-
 ## 💻 Tecnicas Utilizadas
 
 - Linguagem: Kotlin
@@ -53,6 +52,8 @@ e nosso aplicativo visa ser um facilitador nesse processo.
 
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
+## Imagens do APP
 
+![Imagem 1](https://github.com/joaoVieira1/projeto_disciplina_dmo1/blob/main/assets/screenshots/1.jpeg)
 
 
